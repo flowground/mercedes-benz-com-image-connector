@@ -1,0 +1,298 @@
+{
+    "title": "Vehicle Image",
+    "description": "The vehicle images API offers access to original Mercedes-Benz vehicle images.  It provides access to exterior and interior images with parameters e.g. to modify the perspective and to display vehicles at day/nighttime.  In addition you can request component images of a vehicle's engine, paint, rim, trim, upholstery and equipments.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/mercedes-benz.com/image/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.mercedes-benz.com/image_tryout/v1/vehicles",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "imageComponentsGET": {
+            "main": "./lib/actions/imageComponentsGET.js",
+            "title": "Returns URLs pointing to images in JPG format in the highest available resolution (depending on the component) of the vehicle's:\n  * engine (1024x576 px), \n  * rim (710x710 px), \n  * trim (800x600 px), \n  * paints (800x600 px), \n  * upholstery (800x600 px) and \n  * equipments (740x416 px).",
+            "description": "Returns URLs pointing to images in JPG format in the highest available resolution (depending on the component) of the vehicle's:\n  * engine (1024x576 px), \n  * rim (710x710 px), \n  * trim (800x600 px), \n  * paints (800x600 px), \n  * upholstery (800x600 px) and \n  * equipments (740x416 px).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components.js",
+            "title": "x_swagger_router_controller__finorvin__components",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsEngineGET": {
+            "main": "./lib/actions/imageComponentsEngineGET.js",
+            "title": "Returns a URL pointing to an image of the vehicles engine.  These images are available in the resolution 1024x576 px.",
+            "description": "Returns a URL pointing to an image of the vehicles engine.  These images are available in the resolution 1024x576 px.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsEngineGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_engine": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_engine.js",
+            "title": "x_swagger_router_controller__finorvin__components_engine",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_engine.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsEquipmentsGET": {
+            "main": "./lib/actions/imageComponentsEquipmentsGET.js",
+            "title": "Returns URLs pointing to images of this vehicle's equipments. The images are available in the highest possible resolution (usually 740x416 px).",
+            "description": "Returns URLs pointing to images of this vehicle's equipments. The images are available in the highest possible resolution (usually 740x416 px).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsEquipmentsGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_equipments": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_equipments.js",
+            "title": "x_swagger_router_controller__finorvin__components_equipments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_equipments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsPaintGET": {
+            "main": "./lib/actions/imageComponentsPaintGET.js",
+            "title": "Returns URLs pointing to images of this vehicles paint.  These images are available in resolution 800x600 px.  Note there might be two paints (e.g. Smart, 'paint' for body panel and 'paint2' for the tridion cell)",
+            "description": "Returns URLs pointing to images of this vehicles paint.  These images are available in resolution 800x600 px.  Note there might be two paints (e.g. Smart, 'paint' for body panel and 'paint2' for the tridion cell)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsPaintGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_paint": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_paint.js",
+            "title": "x_swagger_router_controller__finorvin__components_paint",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_paint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsRimGET": {
+            "main": "./lib/actions/imageComponentsRimGET.js",
+            "title": "Returns a URL pointing to an image of the vehicles rim.  These images are available in the resolution 710x710 px.",
+            "description": "Returns a URL pointing to an image of the vehicles rim.  These images are available in the resolution 710x710 px.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsRimGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_rim": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_rim.js",
+            "title": "x_swagger_router_controller__finorvin__components_rim",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_rim.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsTrimGET": {
+            "main": "./lib/actions/imageComponentsTrimGET.js",
+            "title": "Returns a URL pointing to an image of this vehicles trim.  These images are available in resolution 800x600 px.",
+            "description": "Returns a URL pointing to an image of this vehicles trim.  These images are available in resolution 800x600 px.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsTrimGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_trim": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_trim.js",
+            "title": "x_swagger_router_controller__finorvin__components_trim",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_trim.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageComponentsUpholsteryGET": {
+            "main": "./lib/actions/imageComponentsUpholsteryGET.js",
+            "title": "Returns URLs pointing to images of the vehicle's upholsteries. Tge images are available in the highest possible resolution (usually 800x600 px).",
+            "description": "Returns URLs pointing to images of the vehicle's upholsteries. Tge images are available in the highest possible resolution (usually 800x600 px).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageComponentsUpholsteryGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__components_upholstery": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__components_upholstery.js",
+            "title": "x_swagger_router_controller__finorvin__components_upholstery",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__components_upholstery.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "imageVehicleGET": {
+            "main": "./lib/actions/imageVehicleGET.js",
+            "title": "Returns URLs pointing to PNG images of a vehicle with a transparent background.",
+            "description": "Returns URLs pointing to PNG images of a vehicle with a transparent background.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/imageVehicleGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "x_swagger_router_controller__finorvin__vehicle": {
+            "main": "./lib/actions/x_swagger_router_controller__finorvin__vehicle.js",
+            "title": "x_swagger_router_controller__finorvin__vehicle",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/x_swagger_router_controller__finorvin__vehicle.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

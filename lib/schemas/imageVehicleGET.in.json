@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "finorvin": {
+            "required": true,
+            "type": "string",
+            "default": "WDD1760421J123456"
+        },
+        "perspectives": {
+            "required": false,
+            "type": "string",
+            "default": "EXT020,INT1"
+        },
+        "roofOpen": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "night": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

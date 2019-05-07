@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "finorvin": {
+            "required": true,
+            "type": "string",
+            "default": "WDD1760421J123456"
+        }
+    }
+}
